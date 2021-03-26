@@ -1,0 +1,13 @@
+<mat-card>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label appearance="fill">{{ texts.login }}</mat-label>
+      <input matInput name="login" [(ngModel)]="login" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{ texts.password }}</mat-label>
+      <input matInput name="password" [(ngModel)]="password" />
+    </mat-form-field>
+    <button color="primary" mat-flat-button>{{ texts.enter }}</button>
+  </form>
+</mat-card>

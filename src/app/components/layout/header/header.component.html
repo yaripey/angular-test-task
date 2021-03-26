@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <span class="header-text">{{ texts.headerText }}</span>
+  <span class="spacer"></span>
+  <div *ngIf="user" class="user-welcome">
+    {{ texts.welcome }}, {{ user.login }}
+  </div>
+  <mat-button-toggle-group
+    [(ngModel)]="selectedOption"
+    (ngModelChange)="onLanguageChange()"
+  >
+    <mat-button-toggle value="en">EN</mat-button-toggle>
+    <mat-button-toggle value="ua">UA</mat-button-toggle>
+    <mat-button-toggle value="ru">RU</mat-button-toggle>
+  </mat-button-toggle-group>
+  <button *ngIf="user" mat-flat-button (click)="onLogout()">
+    {{ texts.logout }}
+  </button>
+</mat-toolbar>
